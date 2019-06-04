@@ -1,7 +1,6 @@
 FILE_PATTERN=cssr-*-pom.xml
-if compgen -G "$FILE_PATTERN" > /dev/null; then
-    echo "Some files exist."
-else 
-    echo cssr does not exist
-    exit 1
+if ls $FILE_PATTERN 1> /dev/null 2>&1; then
+    echo "files do exist"
+else
+    echo "files do not exist"
 fi
